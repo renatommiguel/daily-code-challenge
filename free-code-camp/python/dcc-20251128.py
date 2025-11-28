@@ -19,3 +19,37 @@ The first "P" is not in the correct location ("1"), the "O" isn't in the secret 
 the second "P" is in the correct location ("2"), the third "P" is a zero ("0") 
 because the two "P"'s in the secret word have been used, and the "A" is not in the correct location ("1").
 """
+
+
+
+def compare(word, guess):
+    if not isinstance(word,str):
+        return False
+    if not isinstance(guess,str):
+        return False
+    if not len(word) == len(guess):
+        return False
+    guess = guess.upper()
+    word = word.upper()
+    unique_letters = set(word)
+    length = len(word)
+    res = length * [0]
+    for ind, letter in enumerate(guess):
+
+        if word[ind] == guess[ind]:
+            res[ind]=2
+
+    # x = {l:{'count':word.count(l),"first_index":word.index(l)} for l in list(set(word))}
+
+
+            
+    
+    return res
+comp = compare("WIRELESS", "ETHERNET")
+print(comp)
+wire = "WIRELESS"
+
+print(sorted(wire))
+# print(list(set(wire)))
+# print(wire.count("E"))
+# # print(dir(wire))
