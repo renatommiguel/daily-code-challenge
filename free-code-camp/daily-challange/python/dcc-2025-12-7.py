@@ -4,14 +4,14 @@ def compress_string(sentence):
     res = ""
     length = len(uniq_words)
     for ind,word in enumerate(uniq_words):
-        print(f"{ind} - {word} - {length}")
         count_word = sentence_split.count(word)
         if count_word > 1:
-            res+=f"{word}({count_word})"
+            res+=f"{word}({count_word}) "
         else:
-            res+=word
-        if ind+1 < length:
-            res+=" "
+            res+=f"{word} "
+        # if ind+1 < length:
+        #     res+=" "
+    res = res.strip()
     print(res)
     return res
 
