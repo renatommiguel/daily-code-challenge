@@ -17,16 +17,39 @@ update_inventory([[0, "Bowling Ball"], [0, "Dirty Socks"], [0, "Hair Pin"], [0, 
 """
 
 def update_inventory(inventory, shipment):
+# arr inv
+# arr received
+# arr[1] = [1, "name"]
+    dict_inv = {}
+    for val in inventory:
+        item=val[1]
+        qty=val[0]
+        dict_inv[item] = qty
+    for val in shipment:
+        item=val[1]
+        qty=val[0]
+        # if item in dict_inv.keys()
+        if item in dict_inv.keys():
+            dict_inv[val[1]] += val[0]
+        else:
+            dict_inv[val[1]] = val[0]
+    arr = []
+    for i in list(dict_inv.items()):
+        arr.append([i[1],i[0]])
+    return arr
 
-    return inventory
+
 
 
 if __ name __ == '__ main __':
 
-    
-update_inventory([[2, "apples"], [5, "bananas"]], [[1, "apples"], [3, "bananas"]])
+    arr = update_inventory([[2, "apples"], [5, "bananas"]], [[1, "apples"], [3, "bananas"]])
+    print(arr)
+    arr = update_inventory([[2, "apples"], [5, "bananas"]], [[1, "apples"], [3, "bananas"], [4, "oranges"]]) 
+    print(arr)
 
-update_inventory([[2, "apples"], [5, "bananas"]], [[1, "apples"], [3, "bananas"], [4, "oranges"]]) 
-update_inventory([], [[10, "apples"], [30, "bananas"], [20, "oranges"]]) 
+    arr= update_inventory([], [[10, "apples"], [30, "bananas"], [20, "oranges"]]) 
+    print(arr)
 
-update_inventory([[0, "Bowling Ball"], [0, "Dirty Socks"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]) 
+    arr = update_inventory([[0, "Bowling Ball"], [0, "Dirty Socks"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]) 
+    print(arr)
