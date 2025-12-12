@@ -41,7 +41,7 @@ def update_inventory(inventory, shipment):
 
 
 
-if __ name __ == '__ main __':
+if __name__ == '__main__':
 
     arr = update_inventory([[2, "apples"], [5, "bananas"]], [[1, "apples"], [3, "bananas"]])
     print(arr)

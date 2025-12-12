@@ -31,4 +31,6 @@ def compare(word, guess):
         w = w+str(x)
     print(w)
     return w
-compare("JAVASCRIPT", "TYPESCRIPT")
+if __name__ == '__main__':
+
+    compare("JAVASCRIPT", "TYPESCRIPT")
