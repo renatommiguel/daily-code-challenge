@@ -26,7 +26,7 @@ def is_fizz_buzz(seq):
 
     
 
-if __ name __ == '__ main __':
+if __name__ == '__main__':
     lst = [1, 2, "Fizz", 4]
     print(is_fizz_buzz(lst))
     lst = [1, 2, 3, 4]
