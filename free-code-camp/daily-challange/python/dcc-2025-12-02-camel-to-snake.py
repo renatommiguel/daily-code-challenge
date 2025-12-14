@@ -1,5 +1,5 @@
 """
-Camel to Snake
+camel to snake
 Given a string in camel case, return the snake case version of the string using the following rules:
 
 The input string will contain only letters (A-Z and a-z) and will always start with a lowercase letter.

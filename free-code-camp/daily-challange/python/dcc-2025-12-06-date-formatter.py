@@ -1,5 +1,5 @@
 """
-Date Formatter
+date formatter
 Given a date in the format "Month day, year", return the date in the format "YYYY-MM-DD".
 
 The given month will be the full English month name. For example: "January", "February", etc.
