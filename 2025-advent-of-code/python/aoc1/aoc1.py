@@ -25,5 +25,5 @@ for v in values:
     if ind == 0:
         counter+=1
 print(counter)    
-
+#pass 1191
               
