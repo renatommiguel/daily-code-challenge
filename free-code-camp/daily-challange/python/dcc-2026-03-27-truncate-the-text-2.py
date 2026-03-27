@@ -28,6 +28,40 @@ Tests:
     Waiting: 5. truncate_text("The big black bear")           "The big black bear"
     """
 
+
+
+def truncate_text(s):
+    def get_w(c):
+        lst1 = "ilI."
+        lst2 = "fjrt "
+        lst3 = "abcdeghkmnopqrstuvwxyzJL"
+        lst4 = "ABCDEFGHKMNOPQRSTUVWXYZ"
+        if c in lst1: return 1
+        if c in lst2: return 2
+        if c in lst3: return 3
+        if c in lst4: return 4
+        return 0
+
+    if sum(get_w(c) for c in s) <= 50:
+        print(s)
+        return s
+    
+    ELLIPSIS = 3
+    LIMIT = 50 - ELLIPSIS
+
+    word = []
+    count = 0
+
+    for c in s:
+        wc = get_w(c)
+        if wc + count >= LIMIT:
+            txt = "".join(word) + "..."
+            print(txt)
+            return txt
+        word.append(c)
+        count+=wc
+
+
 if __name__ == "__main__":
     truncate_text("The quick brown fox")      
     truncate_text("The silky smooth sloth")   
@@ -35,31 +69,9 @@ if __name__ == "__main__":
     truncate_text("The fast striped zebra")   
     truncate_text("The big black bear")       
 
-    truncate_text("The quick brown f...")
-    truncate_text("The silky smooth sloth")
-    truncate_text("THE LOUD BRIG...")
-    truncate_text("The fast striped z...")
-    truncate_text("The big black bear")
 
 
 
 
-
-
-# truncate_text("The quick brown fox")  
-# truncate_text("The quick brown f...")
-
-
-# truncate_text("The silky smooth sloth")   
-# truncate_text("The silky smooth sloth")
-
-# truncate_text("THE LOUD BRIGHT BIRD")  
-# truncate_text("THE LOUD BRIG...")
-
-truncate_text("The fast striped zebra")
-truncate_text("The fast striped z...")
-
-# truncate_text("The big black bear") 
-# truncate_text("The big black bear")
 
 
